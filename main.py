@@ -5,7 +5,7 @@ from find_winner import get_winner_info
 
 print("Write path to file with image:")
 
-image = Image.open(input())
+image = Image.open(input()).convert('RGBA')
 
 print("Write path to result file with image:")
 
@@ -24,7 +24,7 @@ if winner_info == "noOne":
 else:
     print("\nWins person who plays for " + winner_info[0])
     print("\n------------------------------------------\n")
-    print("result is written to" + result_path + "result.png file\n")
+    print("result is written to " + result_path + " file\n")
     cells_centers[winner_info[2][0]][0].reverse()
     cells_centers[winner_info[2][2]][0].reverse()
     to_draw=[tuple(cells_centers[winner_info[2][0]][0]),
